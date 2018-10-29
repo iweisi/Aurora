@@ -3,8 +3,8 @@ package me.aurora.app.rest.utils;
 import lombok.extern.slf4j.Slf4j;
 import me.aurora.annotation.Log;
 import me.aurora.domain.ResponseEntity;
-import me.aurora.domain.utils.AliDayuConfig;
-import me.aurora.service.AliDayuService;
+import me.aurora.domain.utils.AliSmsConfig;
+import me.aurora.service.AliSmsService;
 import me.aurora.util.HttpContextUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -18,36 +18,36 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Slf4j
 @RestController
-@RequestMapping("aliDayu")
-public class AliDayuController {
+@RequestMapping("aliSms")
+public class AliSmsController {
 
     @Autowired
-    private AliDayuService aliDayuService;
+    private AliSmsService aliSmsService;
 
     @GetMapping(value = "/index")
     public ModelAndView index(){
-        AliDayuConfig aliDayuConfig = aliDayuService.findById(1L);
+        AliSmsConfig aliDayuConfig = aliSmsService.findById(1L);
         HttpServletRequest request = HttpContextUtils.getHttpServletRequest();
-        request.setAttribute("aliDayu",aliDayuConfig);
+        request.setAttribute("aliSms",aliDayuConfig);
         if(aliDayuConfig == null){
-            request.setAttribute("aliDayu",new AliDayuConfig());
+            request.setAttribute("aliSms",new AliSmsConfig());
         }
-        return new ModelAndView("/utils/aliDayu/index");
+        return new ModelAndView("/utils/aliSms/index");
     }
 
-    @Log("配置阿里大鱼")
+    @Log("配置阿里短信")
     @PostMapping(value = "/config")
-    public ResponseEntity emailConfig(@RequestBody @Validated(AliDayuConfig.Update.class) AliDayuConfig aliDayuConfig){
-        log.warn("REST request to aliDayu AliDayuConfig : {}" +aliDayuConfig);
-        aliDayuConfig.setId(1L);
-        aliDayuService.updateConfig(aliDayuConfig,aliDayuService.findById(1L));
+    public ResponseEntity emailConfig(@RequestBody @Validated(AliSmsConfig.Update.class) AliSmsConfig aliSmsConfig){
+        log.warn("REST request to aliSmsConfig AliSmsConfig : {}" +aliSmsConfig);
+        aliSmsConfig.setId(1L);
+        aliSmsService.updateConfig(aliSmsConfig,aliSmsService.findById(1L));
         return ResponseEntity.ok();
     }
 
     @Log("发送短信")
-    @PostMapping(value = "send")
+    @PostMapping(value = "/send")
     public ResponseEntity send(@RequestParam String phone,@RequestParam String code) throws Exception {
         log.warn("REST request to send SMS : {}" +phone);
-        return aliDayuService.send(aliDayuService.findById(1L),phone,code);
+        return aliSmsService.send(aliSmsService.findById(1L),phone,code);
     }
 }

@@ -31,7 +31,7 @@
                     <label class="layui-form-label">上级类目</label>
                     <div class="layui-input-block">
                         <select name="pid" lay-filter="top" lay-verify="" lay-search>
-                            <option value="0">无</option>
+                            <option value="0">顶级类目</option>
                             <option th:selected="${menu.pid == m.id}" th:each="m:${topMenus}" th:value="${m.id}">[[${m.name}]]</option>
                         </select>
                     </div>

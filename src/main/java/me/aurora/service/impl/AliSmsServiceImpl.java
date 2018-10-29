@@ -11,9 +11,9 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import me.aurora.config.exception.AuroraException;
 import me.aurora.domain.ResponseEntity;
-import me.aurora.domain.utils.AliDayuConfig;
-import me.aurora.repository.AliDayuRepo;
-import me.aurora.service.AliDayuService;
+import me.aurora.domain.utils.AliSmsConfig;
+import me.aurora.repository.AliSmsRepo;
+import me.aurora.service.AliSmsService;
 import me.aurora.util.AuroraConstant;
 import me.aurora.util.EncryptHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,38 +28,38 @@ import java.util.Optional;
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
-public class AliDayuServiceImpl implements AliDayuService {
+public class AliSmsServiceImpl implements AliSmsService {
 
     @Autowired
-    private AliDayuRepo aliDayuRepo;
+    private AliSmsRepo aliDayuRepo;
 
     @Override
-    public AliDayuConfig findById(long id) {
+    public AliSmsConfig findById(long id) {
 
-        Optional<AliDayuConfig> aliDayuConfig = aliDayuRepo.findById(id);
+        Optional<AliSmsConfig> aliSmsConfig = aliDayuRepo.findById(id);
 
-        if(!aliDayuConfig.isPresent()){
+        if(!aliSmsConfig.isPresent()){
             return null;
         }
-        return aliDayuConfig.get();
+        return aliSmsConfig.get();
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public AliDayuConfig updateConfig(AliDayuConfig aliDayuConfig, AliDayuConfig old) {
+    public AliSmsConfig updateConfig(AliSmsConfig aliSmsConfig, AliSmsConfig old) {
 
         try {
-            if(!aliDayuConfig.getAccessKeySecret().equals(old.getAccessKeySecret())){
-                aliDayuConfig.setAccessKeySecret(EncryptHelper.desEncrypt(aliDayuConfig.getAccessKeySecret()));
+            if(!aliSmsConfig.getAccessKeySecret().equals(old.getAccessKeySecret())){
+                aliSmsConfig.setAccessKeySecret(EncryptHelper.desEncrypt(aliSmsConfig.getAccessKeySecret()));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return aliDayuRepo.save(aliDayuConfig);
+        return aliDayuRepo.save(aliSmsConfig);
     }
 
     @Override
-    public ResponseEntity send(AliDayuConfig config, String phone, String code) throws Exception {
+    public ResponseEntity send(AliSmsConfig config, String phone, String code) throws Exception {
 
         //短信API产品名称（短信产品名固定，无需修改）
         final String product = "Dysmsapi";

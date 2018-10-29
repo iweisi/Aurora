@@ -1,10 +1,8 @@
 package me.aurora.service;
 
-import com.aliyuncs.exceptions.ClientException;
 import me.aurora.domain.ResponseEntity;
-import me.aurora.domain.utils.AliDayuConfig;
+import me.aurora.domain.utils.AliSmsConfig;
 import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 
@@ -12,8 +10,8 @@ import org.springframework.cache.annotation.Cacheable;
  * @author 郑杰
  * @date 2018/10/29 16:59:00
  */
-@CacheConfig(cacheNames = "aLiDaYu")
-public interface AliDayuService {
+@CacheConfig(cacheNames = "aliSms")
+public interface AliSmsService {
 
     /**
      * 根据ID查询
@@ -21,10 +19,10 @@ public interface AliDayuService {
      * @return
      */
     @Cacheable(key = "#p0")
-    AliDayuConfig findById(long id);
+    AliSmsConfig findById(long id);
 
     @CachePut(key = "#p0.getId()")
-    AliDayuConfig updateConfig(AliDayuConfig aliDayuConfig, AliDayuConfig old);
+    AliSmsConfig updateConfig(AliSmsConfig aliSmsConfig, AliSmsConfig old);
 
-    ResponseEntity send(AliDayuConfig byId, String phone, String code) throws Exception;
+    ResponseEntity send(AliSmsConfig aliSmsConfig, String phone, String code) throws Exception;
 }

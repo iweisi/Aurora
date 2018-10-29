@@ -10,28 +10,28 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;AccessKeyId</label>
                     <div class="layui-input-inline" style="width: 40%">
-                        <input name="accessKeyId" th:value="${aliDayu.accessKeyId}" lay-verify="required" placeholder="请输入AccessKeyId" autocomplete="off" class="layui-input" type="text">
+                        <input name="accessKeyId" th:value="${aliSms.accessKeyId}" lay-verify="required" placeholder="请输入AccessKeyId" autocomplete="off" class="layui-input" type="text">
                     </div>
                     <div class="layui-form-mid layui-word-aux"> (必填)你的accessKeyId</div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;KeySecret</label>
                     <div class="layui-input-inline" style="width: 40%">
-                        <input name="accessKeySecret" th:value="${aliDayu.accessKeySecret}" lay-verify="accessKeySecret" placeholder="请输入KeySecret" autocomplete="off" class="layui-input" type="password">
+                        <input name="accessKeySecret" th:value="${aliSms.accessKeySecret}" lay-verify="accessKeySecret" placeholder="请输入KeySecret" autocomplete="off" class="layui-input" type="password">
                     </div>
                     <div class="layui-form-mid layui-word-aux"> (必填)你的accessKeySecret</div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;短信签名</label>
                     <div class="layui-input-inline" style="width: 40%">
-                        <input name="signName" th:value="${aliDayu.signName}" lay-verify="required" placeholder="请输入短信签名" autocomplete="off" class="layui-input" type="text">
+                        <input name="signName" th:value="${aliSms.signName}" lay-verify="required" placeholder="请输入短信签名" autocomplete="off" class="layui-input" type="text">
                     </div>
                     <div class="layui-form-mid layui-word-aux"> (必填)短信签名-可在短信控制台中找到</div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;短信模板</label>
                     <div class="layui-input-inline" style="width: 40%">
-                        <input name="templateCode" th:value="${aliDayu.templateCode}" lay-verify="required"  placeholder="请输入短信模板" autocomplete="off" class="layui-input" type="text">
+                        <input name="templateCode" th:value="${aliSms.templateCode}" lay-verify="required"  placeholder="请输入短信模板" autocomplete="off" class="layui-input" type="text">
                     </div>
                     <div class="layui-form-mid layui-word-aux"> (必填)短信模板-可在短信控制台中找到</div>
                 </div>
@@ -136,7 +136,7 @@ if(sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) 
         //监听提交，发送请求
         form.on('submit(saveConfig)', function(){
             $.ajax({
-                url:"/aliDayu/config",
+                url:"/aliSms/config",
                 contentType: "application/json",
                 type: "POST",
                 data:JSON.stringify({
@@ -168,7 +168,7 @@ if(sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) 
         form.on('submit(toXin)', function(){
 
             $.ajax({
-                url:'/aliDayu/send',
+                url:'/aliSms/send',
                 type: "POST",
                 data:{
                     phone:$("input[name='phone']").val(),

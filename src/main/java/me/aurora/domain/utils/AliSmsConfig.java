@@ -12,8 +12,8 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name = "zj_alidayu_config")
-public class AliDayuConfig implements Serializable {
+@Table(name = "zj_alisms_config")
+public class AliSmsConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

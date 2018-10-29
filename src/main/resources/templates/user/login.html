@@ -90,7 +90,7 @@
               data:{username:username,password:password,rememberMe:$("#rememberMe").is(':checked')},
               type:"POST",
               beforeSend:function(){
-                  layer.msg('开始登录');
+                  layer.msg('开始登录',{time:1000});
               },
               success:function(result){
                   layer.close(load);
