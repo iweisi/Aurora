@@ -30,7 +30,10 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">上级类目</label>
                     <div class="layui-input-block">
-                        <input type="text" name="pid" th:value="${menu.pid}" id="tree" placeholder="选择上级类目" autocomplete="off" class="layui-input">
+                        <select name="pid" lay-filter="top" lay-verify="" lay-search>
+                            <option value="0">无</option>
+                            <option th:selected="${menu.pid == m.id}" th:each="m:${topMenus}" th:value="${m.id}">[[${m.name}]]</option>
+                        </select>
                     </div>
                 </div>
                 <div id="action" class="layui-form-item" style="display: none">

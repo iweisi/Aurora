@@ -52,7 +52,6 @@ public class EmailServiceImpl implements EmailService {
         } else {
             return null;
         }
-
     }
 
     @Override

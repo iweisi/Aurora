@@ -1,0 +1,196 @@
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+        <li class="layui-this">参数配置</li>
+        <li>短信测试</li>
+        <li>使用说明</li>
+    </ul>
+    <div class="layui-tab-content" style="height: 100px;">
+        <div class="layui-tab-item layui-show">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;AccessKeyId</label>
+                    <div class="layui-input-inline" style="width: 40%">
+                        <input name="accessKeyId" th:value="${aliDayu.accessKeyId}" lay-verify="required" placeholder="请输入AccessKeyId" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"> (必填)你的accessKeyId</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;KeySecret</label>
+                    <div class="layui-input-inline" style="width: 40%">
+                        <input name="accessKeySecret" th:value="${aliDayu.accessKeySecret}" lay-verify="accessKeySecret" placeholder="请输入KeySecret" autocomplete="off" class="layui-input" type="password">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"> (必填)你的accessKeySecret</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;短信签名</label>
+                    <div class="layui-input-inline" style="width: 40%">
+                        <input name="signName" th:value="${aliDayu.signName}" lay-verify="required" placeholder="请输入短信签名" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"> (必填)短信签名-可在短信控制台中找到</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width: 100px"><span class="layui-badge-dot"></span> &nbsp;短信模板</label>
+                    <div class="layui-input-inline" style="width: 40%">
+                        <input name="templateCode" th:value="${aliDayu.templateCode}" lay-verify="required"  placeholder="请输入短信模板" autocomplete="off" class="layui-input" type="text">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"> (必填)短信模板-可在短信控制台中找到</div>
+                </div>
+
+                <div class="layui-form-item" style="margin-left:4%;">
+                    <button class="layui-btn" lay-submit="required" lay-filter="saveConfig">保存配置</button>
+                </div>
+            </form>
+    </div>
+
+    <div class="layui-tab-item">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">手机号</label>
+                <div class="layui-input-inline" style="width: 460px">
+                    <input name="phone" lay-verify="required|phone" placeholder="请输入手机号码" autocomplete="off" class="layui-input" type="text">
+                </div>
+                <div class="layui-form-mid layui-word-aux">手机号码不能为空</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">参数</label>
+                <div class="layui-input-inline" style="width: 460px">
+                    <input name="code" lay-verify="required" placeholder='如果存在多个参数请按下面的格式书写："key":"value", "key":"value"' autocomplete="off" class="layui-input" type="text">
+                </div>
+                <div class="layui-form-mid layui-word-aux">文明测试，参数请使用："code":"123456"</div>
+            </div>
+
+            <div class="layui-form-item" style="margin-left:5%;margin-top:5px;">
+                <button class="layui-btn" lay-submit lay-filter="toXin">立即送达</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="layui-tab-item">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>使用说明</legend>
+        </fieldset>
+        <blockquote class="layui-elem-quote">注意</blockquote>
+        <pre class="layui-code">
+为了访问短信服务，你需要有一个阿里云账号。如果没有，可首先创建阿里云账号，进行实名认证,请参考 <a style="color: #00a0e9" href="https://help.aliyun.com/knowledge_detail/37171.html?spm=a2c4g.11186623.2.12.f5a85777ruinhD" target="_blank">这里</a></pre>
+
+        <blockquote class="layui-elem-quote">获取阿里云访问密钥</blockquote>
+        <pre class="layui-code">
+您可以通过阿里云控制台的 <a style="color: #00a0e9" href="https://usercenter.console.aliyun.com/#/accesskey" target="_blank">秘钥管理页面</a> 创建、管理所有的访问秘钥对，且保证它处于“启用”状态。</pre>
+
+        <blockquote class="layui-elem-quote">还需需要完成以下步骤</blockquote>
+        <pre class="layui-code">
+在控制台完成短信签名与短信模板的申请，获得调用接口必备的参数
+
+在“短信签名”页面完成签名的申请，获得短信签名的字符串 <a style="color: #00a0e9" href="https://help.aliyun.com/document_detail/55327.html?spm=a2c4g.11186623.2.14.f5a85777ruinhD" target="_blank">签名申请手册</a>
+
+在“短信模板”页面完成模板的申请，获得模板ID。 <a style="color: #00a0e9" href="https://help.aliyun.com/document_detail/55330.html?spm=a2c4g.11186623.2.15.f5a85777ruinhD" target="_blank">模板申请手册</a>
+        </pre>
+
+        <blockquote class="layui-elem-quote">短信发送</blockquote>
+        <pre class="layui-code">
+//设置超时时间-可自行调整
+System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
+System.setProperty("sun.net.client.defaultReadTimeout", "10000");
+//初始化ascClient需要的几个参数
+final String product = "Dysmsapi";//短信API产品名称（短信产品名固定，无需修改）
+final String domain = "dysmsapi.aliyuncs.com";//短信API产品域名（接口地址固定，无需修改）
+//替换成你的AK
+final String accessKeyId = "yourAccessKeyId";//你的accessKeyId,参考本文档步骤2
+final String accessKeySecret = "yourAccessKeySecret";//你的accessKeySecret，参考本文档步骤2
+//初始化ascClient,暂时不支持多region（请勿修改）
+IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId,
+accessKeySecret);
+DefaultProfile.addEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);
+IAcsClient acsClient = new DefaultAcsClient(profile);
+ //组装请求对象
+ SendSmsRequest request = new SendSmsRequest();
+ //使用post提交
+ request.setMethod(MethodType.POST);
+ //必填:待发送手机号。支持以逗号分隔的形式进行批量调用，批量上限为1000个手机号码,批量调用相对于单条调用及时性稍有延迟,验证码类型的短信推荐使用单条调用的方式；发送国际/港澳台消息时，接收号码格式为国际区号+号码，如“85200000000”
+ request.setPhoneNumbers("1500000000");
+ //必填:短信签名-可在短信控制台中找到
+ request.setSignName("云通信");
+ //必填:短信模板-可在短信控制台中找到，发送国际/港澳台消息时，请使用国际/港澳台短信模版
+ request.setTemplateCode("SMS_1000000");
+ //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
+ //友情提示:如果JSON中需要带换行符,请参照标准的JSON协议对换行符的要求,比如短信内容中包含\r\n的情况在JSON中需要表示成\\r\\n,否则会导致JSON在服务端解析失败
+ request.setTemplateParam("{\"name\":\"Tom\", \"code\":\"123\"}");
+ //可选-上行短信扩展码(扩展码字段控制在7位或以下，无特殊需求用户请忽略此字段)
+ //request.setSmsUpExtendCode("90997");
+ //可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
+ request.setOutId("yourOutId");
+//请求失败这里会抛ClientException异常
+SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
+if(sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) {
+//请求成功
+}</pre>
+    </div>
+</div>
+</div>
+<script>
+    layui.use(['form', 'layedit',  'element', 'layer'], function(){
+        var form = layui.form,
+            layer = layui.layer,
+            element = layui.element;
+        form.render();
+        //监听提交，发送请求
+        form.on('submit(saveConfig)', function(){
+            $.ajax({
+                url:"/aliDayu/config",
+                contentType: "application/json",
+                type: "POST",
+                data:JSON.stringify({
+                    accessKeyId:$("input[name='accessKeyId']").val(),
+                    accessKeySecret:$("input[name='accessKeySecret']").val(),
+                    signName:$("input[name='signName']").val(),
+                    templateCode:$("input[name='templateCode']").val()
+                }),
+                success:function(result){
+                    if (result.code == 200) {
+                        spop({
+                            template: '更新成功',
+                            style: 'success',
+                            autoclose: 2000
+                        });
+                    } else {
+                        spop({
+                            template: result.msg,
+                            style: 'error',
+                            autoclose: 2000
+                        });
+                    }
+                }
+            });
+            return false;
+        });
+
+        //监听提交，发送请求
+        form.on('submit(toXin)', function(){
+
+            $.ajax({
+                url:'/aliDayu/send',
+                type: "POST",
+                data:{
+                    phone:$("input[name='phone']").val(),
+                    code:$("input[name='code']").val()
+                },
+                success:function(result){
+                    if (result.code == 200) {
+                        spop({
+                            template: '已成功送达',
+                            style: 'success',
+                            autoclose: 2000
+                        });
+                    } else {
+                        spop({
+                            template: result.msg,
+                            style: 'error',
+                            autoclose: 2000
+                        });
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
