@@ -225,7 +225,7 @@ INSERT INTO `zj_menu` VALUES (29, 'layui-icon-radio', 28, 2, '定时任务', 21,
 INSERT INTO `zj_menu` VALUES (30, 'layui-icon-survey', 28, 2, '调度日志', 22, '/jobLog/index', '2018-10-06 11:55:59', '2018-10-06 11:55:59', 0, b'0', b'0');
 INSERT INTO `zj_menu` VALUES (31, 'layui-icon-tree', 7, 2, '组织架构', 2, '/department/index', '2018-10-25 12:13:54', '2018-10-25 12:36:21', 0, b'0', b'0');
 INSERT INTO `zj_menu` VALUES (32, 'layui-icon-dialogue', 18, 2, '阿里云通信', 42, '/aliSms/index', '2018-10-29 19:00:50', '2018-10-29 22:39:25', 0, b'0', b'0');
-INSERT INTO `zj_menu` VALUES (33, 'layui-icon-console', 5, 2, '实时控制台', 17, '/logMsg/index', '2018-10-30 20:24:33', '2018-10-31 18:03:40', 0, b'0', b'0');
+INSERT INTO `zj_menu` VALUES (33, 'layui-icon-console', 5, 2, '实时控制台', 17, '/sysLog/msg', '2018-10-30 20:24:33', '2018-10-31 18:03:40', 0, b'0', b'0');
 
 -- ----------------------------
 -- Table structure for zj_menus_roles

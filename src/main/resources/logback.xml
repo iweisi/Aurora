@@ -11,7 +11,7 @@
         </encoder>
 
         <!--添加我们自定义的filter-->
-        <filter class="me.aurora.config.logMessage.LogFilter"></filter>
+        <filter class="me.aurora.monitor.config.LogFilter"></filter>
     </appender>
 
     <!--输出到文件-->
