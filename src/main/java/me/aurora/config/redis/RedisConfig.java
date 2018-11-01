@@ -3,6 +3,7 @@ package me.aurora.config.redis;
 import afu.org.checkerframework.checker.oigj.qual.O;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -34,6 +35,7 @@ import java.time.Duration;
  * @author 郑杰
  * @date 2018/09/18 11:29:01
  */
+@Slf4j
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
 
@@ -143,6 +145,7 @@ public class RedisConfig extends CachingConfigurerSupport {
             for (Object obj : params) {
                 sb.append(obj.toString());
             }
+            log.info(sb.toString());
             return sb.toString();
         };
     }

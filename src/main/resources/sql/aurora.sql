@@ -11,7 +11,7 @@
  Target Server Version : 50559
  File Encoding         : 65001
 
- Date: 27/10/2018 18:34:02
+ Date: 01/11/2018 08:52:51
 */
 
 SET NAMES utf8mb4;
@@ -40,6 +40,19 @@ CREATE TABLE `zj_alipay_config`  (
 -- Records of zj_alipay_config
 -- ----------------------------
 INSERT INTO `zj_alipay_config` VALUES (1, '2016091700532697', 'utf-8', 'JSON', 'https://openapi.alipaydev.com/gateway.do', 'http://xiswl.xyz/aliPay/notify', 'MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC5js8sInU10AJ0cAQ8UMMyXrQ+oHZEkVt5lBwsStmTJ7YikVYgbskx1YYEXTojRsWCb+SH/kDmDU4pK/u91SJ4KFCRMF2411piYuXU/jF96zKrADznYh/zAraqT6hvAIVtQAlMHN53nx16rLzZ/8jDEkaSwT7+HvHiS+7sxSojnu/3oV7BtgISoUNstmSe8WpWHOaWv19xyS+Mce9MY4BfseFhzTICUymUQdd/8hXA28/H6osUfAgsnxAKv7Wil3aJSgaJczWuflYOve0dJ3InZkhw5Cvr0atwpk8YKBQjy5CdkoHqvkOcIB+cYHXJKzOE5tqU7inSwVbHzOLQ3XbnAgMBAAECggEAVJp5eT0Ixg1eYSqFs9568WdetUNCSUchNxDBu6wxAbhUgfRUGZuJnnAll63OCTGGck+EGkFh48JjRcBpGoeoHLL88QXlZZbC/iLrea6gcDIhuvfzzOffe1RcZtDFEj9hlotg8dQj1tS0gy9pN9g4+EBH7zeu+fyv+qb2e/v1l6FkISXUjpkD7RLQr3ykjiiEw9BpeKb7j5s7Kdx1NNIzhkcQKNqlk8JrTGDNInbDM6inZfwwIO2R1DHinwdfKWkvOTODTYa2MoAvVMFT9Bec9FbLpoWp7ogv1JMV9svgrcF9XLzANZ/OQvkbe9TV9GWYvIbxN6qwQioKCWO4GPnCAQKBgQDgW5MgfhX8yjXqoaUy/d1VjI8dHeIyw8d+OBAYwaxRSlCfyQ+tieWcR2HdTzPca0T0GkWcKZm0ei5xRURgxt4DUDLXNh26HG0qObbtLJdu/AuBUuCqgOiLqJ2f1uIbrz6OZUHns+bT/jGW2Ws8+C13zTCZkZt9CaQsrp3QOGDx5wKBgQDTul39hp3ZPwGNFeZdkGoUoViOSd5Lhowd5wYMGAEXWRLlU8z+smT5v0POz9JnIbCRchIY2FAPKRdVTICzmPk2EPJFxYTcwaNbVqL6lN7J2IlXXMiit5QbiLauo55w7plwV6LQmKm9KV7JsZs5XwqF7CEovI7GevFzyD3w+uizAQKBgC3LY1eRhOlpWOIAhpjG6qOoohmeXOphvdmMlfSHq6WYFqbWwmV4rS5d/6LNpNdL6fItXqIGd8I34jzql49taCmi+A2nlR/E559j0mvM20gjGDIYeZUz5MOE8k+K6/IcrhcgofgqZ2ZED1ksHdB/E8DNWCswZl16V1FrfvjeWSNnAoGAMrBplCrIW5xz+J0Hm9rZKrs+AkK5D4fUv8vxbK/KgxZ2KaUYbNm0xv39c+PZUYuFRCz1HDGdaSPDTE6WeWjkMQd5mS6ikl9hhpqFRkyh0d0fdGToO9yLftQKOGE/q3XUEktI1XvXF0xyPwNgUCnq0QkpHyGVZPtGFxwXiDvpvgECgYA5PoB+nY8iDiRaJNko9w0hL4AeKogwf+4TbCw+KWVEn6jhuJa4LFTdSqp89PktQaoVpwv92el/AhYjWOl/jVCm122f9b7GyoelbjMNolToDwe5pF5RnSpEuDdLy9MfE8LnE3PlbE7E5BipQ3UjSebkgNboLHH/lNZA5qvEtvbfvQ==', 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAut9evKRuHJ/2QNfDlLwvN/S8l9hRAgPbb0u61bm4AtzaTGsLeMtScetxTWJnVvAVpMS9luhEJjt+Sbk5TNLArsgzzwARgaTKOLMT1TvWAK5EbHyI+eSrc3s7Awe1VYGwcubRFWDm16eQLv0k7iqiw+4mweHSz/wWyvBJVgwLoQ02btVtAQErCfSJCOmt0Q/oJQjj08YNRV4EKzB19+f5A+HQVAKy72dSybTzAK+3FPtTtNen/+b5wGeat7c32dhYHnGorPkPeXLtsqqUTp1su5fMfd4lElNdZaoCI7osZxWWUo17vBCZnyeXc9fk0qwD9mK6yRAxNbrY72Xx5VqIqwIDAQAB', 'http://xiswl.xyz/aliPay/return', 'RSA2', '2088102176044281');
+
+-- ----------------------------
+-- Table structure for zj_alisms_config
+-- ----------------------------
+DROP TABLE IF EXISTS `zj_alisms_config`;
+CREATE TABLE `zj_alisms_config`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `accessKeyId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `accessKeySecret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `signName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `templateCode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for zj_department
@@ -104,7 +117,7 @@ CREATE TABLE `zj_dict`  (
   `table_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `updateTime` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of zj_dict
@@ -157,7 +170,7 @@ CREATE TABLE `zj_job`  (
   `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `updateTime` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of zj_job
@@ -184,33 +197,35 @@ CREATE TABLE `zj_menu`  (
   `sys` bit(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_cbhg0bi3f1emxkhqqtvca9btx`(`soft`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of zj_menu
 -- ----------------------------
-INSERT INTO `zj_menu` VALUES (5, 'layui-icon-chart', 0, 1, '系统监控', 10, '', '2018-08-29 11:40:17', '2018-10-26 12:45:17', 4, b'0', b'1');
+INSERT INTO `zj_menu` VALUES (5, 'layui-icon-chart', 0, 1, '系统监控', 10, '', '2018-08-29 11:40:17', '2018-10-30 20:24:33', 5, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (6, 'layui-icon-username', 7, 2, '用户管理', 1, '/user/index', '2018-08-29 11:40:17', '2018-10-25 12:14:30', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (7, 'layui-icon-set-sm', 0, 1, '系统管理', 0, '', '2018-08-29 11:40:17', '2018-10-26 13:18:15', 7, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (8, 'layui-icon-template', 7, 2, '菜单管理', 5, '/menu/index', '2018-08-29 11:40:17', '2018-10-05 14:02:44', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (9, 'layui-icon-survey', 5, 2, '系统日志', 13, '/sysLog/index', '2018-08-29 11:40:17', '2018-10-03 09:04:22', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (10, 'layui-icon-password', 7, 2, '权限管理', 4, '/permission/index', '2018-08-29 11:40:17', '2018-10-03 08:59:50', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (11, 'layui-icon-top', 7, 2, '角色管理', 3, '/role/index', '2018-08-29 11:40:17', '2018-10-03 08:59:23', 0, b'0', b'1');
-INSERT INTO `zj_menu` VALUES (13, 'layui-icon-picture-fine', 18, 2, 'SM.MS图床', 44, '/picture/index', '2018-09-20 11:40:53', '2018-10-03 08:56:50', 0, b'0', b'1');
+INSERT INTO `zj_menu` VALUES (13, 'layui-icon-picture-fine', 18, 2, 'SM.MS图床', 45, '/picture/index', '2018-09-20 11:40:53', '2018-10-03 08:56:50', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (14, 'layui-icon-username', 5, 2, '在线用户', 12, '/online/index', '2018-09-21 16:09:38', '2018-10-03 09:01:22', 0, b'0', b'1');
-INSERT INTO `zj_menu` VALUES (16, 'layui-icon-console', 5, 2, 'Redis终端', 16, '/redis/terminal', '2018-09-22 11:18:21', '2018-10-03 09:05:11', 0, b'0', b'1');
+INSERT INTO `zj_menu` VALUES (16, 'layui-icon-circle', 5, 2, 'Redis终端', 16, '/redis/terminal', '2018-09-22 11:18:21', '2018-10-31 23:00:53', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (17, 'layui-icon-file', 7, 2, '接口文档', 7, '/swagger/index', '2018-09-23 09:16:17', '2018-10-03 08:57:26', 0, b'0', b'1');
-INSERT INTO `zj_menu` VALUES (18, 'layui-icon-util', 0, 1, '第三方工具', 40, '', '2018-09-24 23:46:02', '2018-10-03 09:21:46', 5, b'0', b'1');
-INSERT INTO `zj_menu` VALUES (19, 'layui-icon-code-circle', 18, 2, '百度UEditor', 45, '/ueditor/index', '2018-09-24 23:46:47', '2018-10-03 08:54:27', 0, b'0', b'1');
+INSERT INTO `zj_menu` VALUES (18, 'layui-icon-util', 0, 1, '第三方工具', 40, '', '2018-09-24 23:46:02', '2018-10-29 19:00:50', 6, b'0', b'1');
+INSERT INTO `zj_menu` VALUES (19, 'layui-icon-code-circle', 18, 2, '百度UEditor', 46, '/ueditor/index', '2018-09-24 23:46:47', '2018-10-03 08:54:27', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (21, 'layui-icon-chart', 5, 2, 'SQL监控', 15, '/druid/index.html', '2018-09-27 13:24:25', '2018-10-03 08:57:49', 0, b'1', b'1');
 INSERT INTO `zj_menu` VALUES (22, 'layui-icon-edit', 18, 2, '邮件工具', 41, '/email/index', '2018-09-28 07:32:57', '2018-10-02 16:26:01', 0, b'0', b'1');
-INSERT INTO `zj_menu` VALUES (24, 'layui-icon-dollar', 18, 2, '支付宝工具', 42, '/aliPay/index', '2018-09-30 15:16:43', '2018-10-02 16:27:09', 0, b'0', b'1');
-INSERT INTO `zj_menu` VALUES (25, 'layui-icon-upload', 18, 2, '七牛云存储', 43, '/qiNiu/index', '2018-10-02 11:03:27', '2018-10-02 16:26:42', 0, b'0', b'1');
+INSERT INTO `zj_menu` VALUES (24, 'layui-icon-dollar', 18, 2, '支付宝工具', 43, '/aliPay/index', '2018-09-30 15:16:43', '2018-10-02 16:27:09', 0, b'0', b'1');
+INSERT INTO `zj_menu` VALUES (25, 'layui-icon-upload', 18, 2, '七牛云存储', 44, '/qiNiu/index', '2018-10-02 11:03:27', '2018-10-02 16:26:42', 0, b'0', b'1');
 INSERT INTO `zj_menu` VALUES (27, 'layui-icon-read', 7, 2, '字典管理', 6, '/dict/index', '2018-10-05 14:03:40', '2018-10-05 14:03:40', 0, b'0', b'0');
 INSERT INTO `zj_menu` VALUES (28, 'layui-icon-log', 0, 1, '任务调度', 20, '', '2018-10-06 10:37:11', '2018-10-06 11:55:59', 2, b'0', b'0');
 INSERT INTO `zj_menu` VALUES (29, 'layui-icon-radio', 28, 2, '定时任务', 21, '/job/index', '2018-10-06 10:38:06', '2018-10-06 10:38:06', 0, b'0', b'0');
 INSERT INTO `zj_menu` VALUES (30, 'layui-icon-survey', 28, 2, '调度日志', 22, '/jobLog/index', '2018-10-06 11:55:59', '2018-10-06 11:55:59', 0, b'0', b'0');
 INSERT INTO `zj_menu` VALUES (31, 'layui-icon-tree', 7, 2, '组织架构', 2, '/department/index', '2018-10-25 12:13:54', '2018-10-25 12:36:21', 0, b'0', b'0');
+INSERT INTO `zj_menu` VALUES (32, 'layui-icon-dialogue', 18, 2, '阿里云通信', 42, '/aliSms/index', '2018-10-29 19:00:50', '2018-10-29 22:39:25', 0, b'0', b'0');
+INSERT INTO `zj_menu` VALUES (33, 'layui-icon-console', 5, 2, '实时控制台', 17, '/logMsg/index', '2018-10-30 20:24:33', '2018-10-31 18:03:40', 0, b'0', b'0');
 
 -- ----------------------------
 -- Table structure for zj_menus_roles
@@ -250,6 +265,8 @@ INSERT INTO `zj_menus_roles` VALUES (28, 1);
 INSERT INTO `zj_menus_roles` VALUES (29, 1);
 INSERT INTO `zj_menus_roles` VALUES (30, 1);
 INSERT INTO `zj_menus_roles` VALUES (31, 1);
+INSERT INTO `zj_menus_roles` VALUES (32, 1);
+INSERT INTO `zj_menus_roles` VALUES (33, 1);
 INSERT INTO `zj_menus_roles` VALUES (5, 3);
 INSERT INTO `zj_menus_roles` VALUES (6, 3);
 INSERT INTO `zj_menus_roles` VALUES (7, 3);
@@ -278,7 +295,7 @@ CREATE TABLE `zj_permission`  (
   `pid` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_djtxn2vldlgrkfk21d155b48i`(`perms`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 50 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of zj_permission
@@ -374,6 +391,11 @@ CREATE TABLE `zj_picture`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of zj_picture
+-- ----------------------------
+INSERT INTO `zj_picture` VALUES (1, '2018-10-29 09:27:06', '\"\"', '200', '8.49KB   ', 'https://i.loli.net/2018/10/29/5bd661eac0e5f.jpg', '200', 1, '1');
+
+-- ----------------------------
 -- Table structure for zj_qiniu_config
 -- ----------------------------
 DROP TABLE IF EXISTS `zj_qiniu_config`;
@@ -406,7 +428,7 @@ CREATE TABLE `zj_qiniu_content`  (
   `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `updateTime` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of zj_qiniu_content
@@ -415,6 +437,7 @@ INSERT INTO `zj_qiniu_content` VALUES (1, 'aurora', '189.97KB   ', '120181025163
 INSERT INTO `zj_qiniu_content` VALUES (2, 'aurora', '48.11KB   ', 'dsp20181026135347.jpg', '公开', 'http://pfywktugt.bkt.clouddn.com/dsp20181026135347.jpg', '2018-10-26 15:47:23');
 INSERT INTO `zj_qiniu_content` VALUES (3, 'aurora', '48.11KB   ', 'dsp20181026135403.jpg', '公开', 'http://pfywktugt.bkt.clouddn.com/dsp20181026135403.jpg', '2018-10-26 15:47:23');
 INSERT INTO `zj_qiniu_content` VALUES (4, 'aurora', '8.36KB   ', 'qsc-logo-new20181025150100.png', '公开', 'http://pfywktugt.bkt.clouddn.com/qsc-logo-new20181025150100.png', '2018-10-26 15:47:23');
+INSERT INTO `zj_qiniu_content` VALUES (5, 'aurora', '292.27KB   ', '谷歌上网助手1.2.020181027200432.crx', '公开', 'http://pfywktugt.bkt.clouddn.com/谷歌上网助手1.2.020181027200432.crx', '2018-10-28 09:39:37');
 
 -- ----------------------------
 -- Table structure for zj_role
@@ -427,7 +450,7 @@ CREATE TABLE `zj_role`  (
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `updateDateTime` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of zj_role
@@ -454,7 +477,7 @@ CREATE TABLE `zj_user`  (
   UNIQUE INDEX `UK_kpubos9gc2cvtkb0thktkbkes`(`email`) USING BTREE,
   INDEX `FKqfitoyy9x1gctukdi020j4224`(`department_id`) USING BTREE,
   CONSTRAINT `FKqfitoyy9x1gctukdi020j4224` FOREIGN KEY (`department_id`) REFERENCES `zj_department` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of zj_user

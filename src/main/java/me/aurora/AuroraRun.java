@@ -3,19 +3,20 @@ package me.aurora;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
 @Controller
 @EnableCaching
 @EnableScheduling
 @SpringBootApplication
 @EnableTransactionManagement
+@EnableWebSocketMessageBroker
 /**
  * @author 郑杰
  * @date 2018/08/21 11:54:10

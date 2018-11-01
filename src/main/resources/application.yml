@@ -123,7 +123,7 @@ aurora:
     # rememberMe cookie有效时长，默认86400秒，即一天
     cookieTimeout: 86400
     # 免认证的路径配置，如静态资源，注册页面，验证码请求,swagger等~
-    anonUrls: /css/**,/js/**,/my/**,/images/**,/user/regist,/plugins/**,/test/**,/signUp.html,/logout,/login
+    anonUrls: /css/**,/js/**,/my/**,/images/**,/user/regist,/plugins/**,/test/**,/signUp.html,/logout,/login,/websocket,/topic/pullLogger
     # 登录 url
     loginUrl: /login.html
     # 登录成功mvc后跳转的 url

@@ -9,6 +9,9 @@
             <pattern>%black(%contextName-) %red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{36}) - %gray(%msg%n)</pattern>
             <charset>utf-8</charset>
         </encoder>
+
+        <!--添加我们自定义的filter-->
+        <filter class="me.aurora.config.logMessage.LogFilter"></filter>
     </appender>
 
     <!--输出到文件-->
@@ -20,6 +23,8 @@
             <!--<pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>-->
         <!--</encoder>-->
     <!--</appender>-->
+
+
 
     <!--普通日志输出到控制台-->
     <root level="info">
@@ -36,6 +41,10 @@
     </logger>
 
     <logger name="jdbc.resultset" level="ERROR" additivity="false">
+        <appender-ref ref="console" />
+    </logger>
+
+    <logger name="jdbc.resultsettable" level="INFO" additivity="false">
         <appender-ref ref="console" />
     </logger>
 

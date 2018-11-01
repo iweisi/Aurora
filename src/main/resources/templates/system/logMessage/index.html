@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>控制台实时打印</title>
+  <!-- build:css -->
+  <link rel="stylesheet" th:href="@{'/css/logMsg.css'}">
+  <!-- build:js -->
+    <script th:src="@{'/js/jquery.min.js'}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+<div class="handle">
+    <button class="closes"></button>
+    <button class="minimize"></button>
+    <button class="maximize"></button>
+    <span>[[${userName}]]@[[${osName}]]: ~ (logback)</span>
+</div>
+<div id="log-container">
+    <div></div>
+</div>
+
+</body>
+    <script>
+        //动态指定高度
+        $(function () {
+            var offsetHig = document.documentElement.clientHeight;
+            var height = offsetHig-146;
+            $("#log-container").height(height)
+        })
+        $("#log-container div").append("aurora- "+"<span style='color: #CD0066'>"+getFormatDate()+"</span> <span style='color: #00CD00'>[aurora-system-msg]</span> <span style='color: #0000ff'>INFO</span> <span style='color: #DE00CC'>me.auaora.Applicationn</span> : (*^ω^*) 欢迎使用~").append("<br/>");
+        $("#log-container").scrollTop($("#log-container div").height() - $("#log-container").height());
+        var stompClient = null;
+        if(stompClient==null){
+            var socket =new SockJS('/websocket?token=kl');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({token:"kl"}, function(frame) {
+                stompClient.subscribe('/topic/pullLogger', function(event) {
+                    var content=JSON.parse(event.body);
+
+                    var color = "<span style='color: #0000ff'>";
+
+                    if(content.level == "WARN"){
+                        color = "<span style='color: #FFFF00'>"
+                    }
+                    if(content.level == "ERROR"){
+                        color = "<span style='color: #FF0000'>"
+                    }
+                    if(content.level == "DEBUG"){
+                        color = "<span style='color: #DEA000'>"
+                    }
+
+                    $("#log-container div").append("aurora- "+"<span style='color: #CD0066'>"+content.timestamp +"</span> <span style='color: #00CD00'>["+ content.threadName+"]</span> "+ color + content.level+"</span> <span style='color: #DE00CC'>"+ content.className+"</span> : "+content.body).append("<br/>");
+                    $("#log-container").scrollTop($("#log-container div").height() - $("#log-container").height());
+                },{
+                    token:"kltoen"
+                });
+            });
+        }
+        function closeSocket() {
+            if (stompClient != null) {
+                stompClient.disconnect();
+                stompClient=null;
+            }
+        }
+        function getFormatDate() {
+            var date = new Date();
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            var currentDate = date.getFullYear() + "-" + month + "-" + strDate
+                + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            return currentDate;
+        }
+    </script>
+</html>

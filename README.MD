@@ -10,7 +10,7 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 
 - <del>用户个人中心</del>
 - <del>部门管理，组织结构</del>
-- 短信模块
+- <del>阿里短信</del>
 - 站内信模块
 - 工作流
 
@@ -48,6 +48,7 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 │  ├─字典管理
 │  └─接口文档
 ├─系统监控
+│  ├─实时控制台
 │  ├─Redis终端
 │  ├─SQL监控
 │  ├─在线用户
@@ -115,11 +116,7 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 
 - 系统首页
 
-![](https://i.loli.net/2018/10/25/5bd11baaa7b02.png)
-
-- 用户管理
-
-![](https://i.imgur.com/Ms6F5mk.png)
+![](https://i.imgur.com/gJIZ1J6.png)
 
 - 组织结构
 
@@ -137,10 +134,6 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 
 ![](https://i.imgur.com/2spz8q3.png)
 
-- swagger文档
-
-![](https://i.imgur.com/3bBeSTt.png)
-
 - Redis终端
 
 ![](https://i.imgur.com/TvKl5SH.png)
@@ -149,9 +142,9 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 
 ![](https://i.imgur.com/3rBMJ6d.png)
 
-- 发送邮件功能
+- 实时控制台
 
-![](https://i.imgur.com/ByfMmkR.png)
+![](https://i.imgur.com/mnZqxUF.png)
 
 ### 开发与部署
 账号：aurora 密码：123456

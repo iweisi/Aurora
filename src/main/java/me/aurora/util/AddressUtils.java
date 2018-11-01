@@ -72,9 +72,6 @@ public class AddressUtils {
                     break;
             }
             DataBlock dataBlock = null;
-            if (!Util.isIpAddress(ip)) {
-                log.error("Error: Invalid ip address");
-            }
             dataBlock = (DataBlock) method.invoke(searcher, ip);
             String address = dataBlock.getRegion().replace("0|","");
             if(address.charAt(address.length()-1) == '|'){
