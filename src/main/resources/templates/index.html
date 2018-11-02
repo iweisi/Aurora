@@ -14,7 +14,8 @@
   <link rel="stylesheet" th:href="@{'/plugins/spop/spop.css'}">
   <link rel="stylesheet" th:href="@{'/plugins/css/theme/default.css'}" th:id="theme">
   <link rel="stylesheet" th:href="@{'/plugins/font-awesome/css/font-awesome.min.css'}">
-  <script>
+  <!--统计浏览量-->
+    <script>
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.open("GET","/pageviews/plusCount?t"+Math.random(),true);
       xmlhttp.send();

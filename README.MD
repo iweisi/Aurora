@@ -6,14 +6,6 @@
 
 Aurora是一个简单高效的后台管理系统。项目基础框架采用全新的Java Web开发框架 —— Spring Boot2.0.4，消除了繁杂的XML配置，使得二次开发更为简单；数据访问层采用Spring boot Jpa，可快速高效对数据进行操作，消除了大量传统XML配置SQL的代码，分页使用Pageable；安全框架采用时下流行的Apache Shiro，加入了部门到用户级别的权限控制；前端页面使用KidAdmin构建，并提供多套配色以供选择。
 
-### Aurora1.2 版本更新计划
-
-- <del>用户个人中心</del>
-- <del>部门管理，组织结构</del>
-- <del>阿里短信</del>
-- 站内信模块
-- 工作流
-
 ### 预览地址
 [https://auauz.net](https://auauz.net)
 
@@ -55,6 +47,7 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 │  └─系统日志
 │─第三方工具
 │  │-邮件工具
+│  │-阿里短信
 │  │-支付宝支付
 │  │-七牛云储存
 │  │-SM.MS图床
@@ -116,7 +109,7 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 
 - 系统首页
 
-![](https://i.imgur.com/gJIZ1J6.png)
+![](https://i.imgur.com/nrYQltK.png)
 
 - 组织结构
 
@@ -126,7 +119,7 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 
 ![](https://i.imgur.com/g1EEe30.png)
 
-- 菜单管理，使用树形表格
+- 菜单管理
 
 ![](https://i.imgur.com/NAXmLGr.png)
 
@@ -138,13 +131,9 @@ Aurora是一个简单高效的后台管理系统。项目基础框架采用全�
 
 ![](https://i.imgur.com/TvKl5SH.png)
 
-- 七牛云存储，支持同步数据到数据库
-
-![](https://i.imgur.com/3rBMJ6d.png)
-
 - 实时控制台
 
-![](https://i.imgur.com/mnZqxUF.png)
+![](https://i.imgur.com/BT0surI.png)
 
 ### 开发与部署
 账号：aurora 密码：123456

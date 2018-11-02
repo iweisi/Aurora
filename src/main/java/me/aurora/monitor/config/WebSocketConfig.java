@@ -43,7 +43,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
                 while (true) {
                     try {
                         LogMessage log = LoggerQueue.getInstance().poll();
-                        if(log!=null && !log.getClassName().equals("jdbc.resultsettable")){
+                        // && !log.getClassName().equals("jdbc.resultsettable")
+                        if(log!=null){
+                            if(log.getClassName().equals("jdbc.resultsettable")){
+                                log.setBody("<br><pre>"+log.getBody()+"</pre>");
+                            }
                             if(messagingTemplate!=null)
                                 messagingTemplate.convertAndSend("/topic/pullLogger",log);
                         }
